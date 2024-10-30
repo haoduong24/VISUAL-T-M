@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        .nav-link {
+            position: relative;
+            color: #fff;
+            padding: 10px 15px;
+            transition: all 0.3s;
+            border-radius: 5px;
+        }
+
+            .nav-link:hover {
+                background-color: rgba(255, 255, 255, 0.2); /* Màu nền khi hover */
+                transform: scale(1.05); /* Hiệu ứng phóng to khi hover */
+            }
+
+            .nav-link::after {
+                content: '';
+                display: block;
+                height: 2px;
+                background: #ffd700; /* Đường dưới mỗi liên kết */
+                width: 0;
+                transition: width 0.3s;
+                margin: auto;
+            }
+
+            .nav-link:hover::after {
+                width: 100%; /* Đường sẽ hiện ra khi hover */
+            }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+        <div class="container">
+            @Html.ActionLink("Shop Vot", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("ChiTietDonHangs", "index", "ChiTietDonHangs", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("DonHangs", "index", "DonHangs", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("HoaDons", "index", "HoaDons", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("KhachHangs", "index", "KhachHangs", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("KhuyenMais", "index", "KhuyenMais", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("NhaCungCaps", "index", "NhaCungCaps", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("NhanViens", "index", "NhanViens", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Vots", "index", "Vots", new { area = "" }, new { @class = "nav-link" })</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
