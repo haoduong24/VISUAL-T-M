@@ -76,6 +76,17 @@
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
+  <EntityType Name="TaiKhoan">
+    <Key>
+      <PropertyRef Name="TenDangNhap" />
+    </Key>
+    <Property Name="TenDangNhap" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="MatKhau" Type="varchar" MaxLength="500" />
+    <Property Name="TenHienThi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="SoDienThoai" Type="nvarchar(max)" />
+    <Property Name="Active" Type="bit" />
+  </EntityType>
   <EntityType Name="Vot">
     <Key>
       <PropertyRef Name="MaVot" />
@@ -155,6 +166,7 @@
     <EntitySet Name="NhaCungCap" EntityType="Self.NhaCungCap" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NhanVien" EntityType="Self.NhanVien" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Vot" EntityType="Self.Vot" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__ChiTietDo__MaDon__2E1BDC42" Association="Self.FK__ChiTietDo__MaDon__2E1BDC42">
       <End Role="DonHang" EntitySet="DonHang" />

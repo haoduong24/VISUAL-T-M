@@ -129,6 +129,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ChiTietDonHangsController.cs" />
     <Compile Include="Controllers\DonHangsController.cs" />
     <Compile Include="Controllers\HoaDonsController.cs" />
@@ -137,6 +138,7 @@
     <Compile Include="Controllers\KhuyenMaisController.cs" />
     <Compile Include="Controllers\NhaCungCapsController.cs" />
     <Compile Include="Controllers\NhanViensController.cs" />
+    <Compile Include="Controllers\TaiKhoanController.cs" />
     <Compile Include="Controllers\VotsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -180,6 +182,10 @@
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>Banvottt.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\TaiKhoan.cs">
+      <DependentUpon>Banvottt.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Taikhoann.cs" />
     <Compile Include="Models\Vot.cs">
       <DependentUpon>Banvottt.tt</DependentUpon>
     </Compile>
@@ -293,6 +299,8 @@
     <Content Include="Views\Vots\Details.cshtml" />
     <Content Include="Views\Vots\Edit.cshtml" />
     <Content Include="Views\Vots\Index.cshtml" />
+    <Content Include="Views\TaiKhoan\DangNhap.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,10 @@
+D:\Visual Tím\VISUAL-T-M\Dangnhap\bin\Debug\Dangnhap.exe.config
+D:\Visual Tím\VISUAL-T-M\Dangnhap\bin\Debug\Dangnhap.exe
+D:\Visual Tím\VISUAL-T-M\Dangnhap\bin\Debug\Dangnhap.pdb
+D:\Visual Tím\VISUAL-T-M\Dangnhap\obj\Debug\Dangnhap.csproj.AssemblyReference.cache
+D:\Visual Tím\VISUAL-T-M\Dangnhap\obj\Debug\Dangnhap.FormDangNhap.resources
+D:\Visual Tím\VISUAL-T-M\Dangnhap\obj\Debug\Dangnhap.Properties.Resources.resources
+D:\Visual Tím\VISUAL-T-M\Dangnhap\obj\Debug\Dangnhap.csproj.GenerateResource.cache
+D:\Visual Tím\VISUAL-T-M\Dangnhap\obj\Debug\Dangnhap.csproj.CoreCompileInputs.cache
+D:\Visual Tím\VISUAL-T-M\Dangnhap\obj\Debug\Dangnhap.exe
+D:\Visual Tím\VISUAL-T-M\Dangnhap\obj\Debug\Dangnhap.pdb

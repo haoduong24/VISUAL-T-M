@@ -186,5 +186,17 @@
       <End Role="NhaCungCap" EntitySet="NhaCungCaps" />
       <End Role="Vot" EntitySet="Vots" />
     </AssociationSet>
+    <EntitySet Name="TaiKhoans" EntityType="QUANLYBANVOTModel.TaiKhoan" />
   </EntityContainer>
+  <EntityType Name="TaiKhoan">
+    <Key>
+      <PropertyRef Name="TenDangNhap" />
+    </Key>
+    <Property Name="TenDangNhap" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="MatKhau" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="TenHienThi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SoDienThoai" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Boolean" />
+  </EntityType>
 </Schema>

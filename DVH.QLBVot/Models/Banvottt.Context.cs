@@ -34,5 +34,6 @@ namespace DVH.QLBVot.Models
         public virtual DbSet<NhanVien> NhanViens { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Vot> Vots { get; set; }
+        public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
     }
 }

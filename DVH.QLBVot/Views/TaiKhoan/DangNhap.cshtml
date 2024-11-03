@@ -1,0 +1,43 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Đăng Nhập</title>
+</head>
+<body>
+    <div> 
+        <form method="post">
+            <div>
+                <p>
+                    Tên đăng nhập
+                </p>
+                <p>
+                    <input type="text" name="tenDangNhap" />
+                </p>
+            </div>
+            <div>
+                <p>
+                    Mật Khẩu
+                </p>
+                <p>
+                    <input type="password" name="matKhau" />
+                </p>
+            </div>
+            <div>
+                <p>
+                    <button type="submit">Đăng Nhập</button>
+                </p>
+                <p style="color:pink">
+                    @ViewBag.thongbao
+                </p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
