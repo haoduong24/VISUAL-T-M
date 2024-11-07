@@ -1,0 +1,42 @@
+﻿@model  DVH.QLBVot.Models.DonHang
+@{
+    ViewBag.Title = "Đặt Hàng";
+    Layout = "_Layout"; // Sử dụng layout đã tạo
+}
+
+<h2>Đặt Hàng</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.MaDonHang)
+        @Html.TextBoxFor(m => m.MaDonHang, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.MaDonHang, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.MaKhachHang)
+        @Html.TextBoxFor(m => m.MaKhachHang, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.MaKhachHang, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.NgayDatHang)
+        @Html.TextBoxFor(m => m.NgayDatHang, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.NgayDatHang, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.TongTien)
+        @Html.TextBoxFor(m => m.TongTien, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.TongTien, "", new { @class = "text-danger" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Đặt hàng</button>
+}
+
+<div>
+    @Html.ActionLink("Quay lại danh sách đơn hàng", "Index", "DonHang")
+</div>
+

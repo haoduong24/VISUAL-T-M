@@ -1,42 +1,69 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
 <!DOCTYPE html>
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Đăng Nhập</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Chiều cao toàn bộ màn hình */
+            background-color: pink; /* Màu nền */
+        }
+
+        .login-container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px; /* Chiều rộng form */
+        }
+
+            .login-container h2 {
+                text-align: center;
+                margin-bottom: 1rem;
+                color: #343a40; /* Màu chữ tiêu đề */
+            }
+
+        .form-group label {
+            font-weight: bold; /* Đậm chữ label */
+        }
+
+        .btn-primary {
+            width: 100%; /* Nút bấm chiếm toàn bộ chiều rộng */
+        }
+
+        .message {
+            color: pink; /* Màu cho thông báo */
+            text-align: center;
+            margin-top: 1rem;
+        }
+    </style>
 </head>
 <body>
-    <div> 
+    <div class="login-container">
+        <h2>Đăng Nhập</h2>
         <form method="post">
-            <div>
-                <p>
-                    Tên đăng nhập
-                </p>
-                <p>
-                    <input type="text" name="tenDangNhap" />
-                </p>
+            <div class="form-group">
+                <label for="tenDangNhap">Tên đăng nhập</label>
+                <input type="text" class="form-control" id="tenDangNhap" name="tenDangNhap" required />
+            </div>
+            <div class="form-group">
+                <label for="matKhau">Mật Khẩu</label>
+                <input type="password" class="form-control" id="matKhau" name="matKhau" required />
             </div>
             <div>
-                <p>
-                    Mật Khẩu
-                </p>
-                <p>
-                    <input type="password" name="matKhau" />
-                </p>
+                <button type="submit" class="btn btn-primary">Đăng Nhập</button>
             </div>
-            <div>
-                <p>
-                    <button type="submit">Đăng Nhập</button>
-                </p>
-                <p style="color:pink">
-                    @ViewBag.thongbao
-                </p>
-            </div>
+            <p class="message">
+                @ViewBag.thongbao
+            </p>
         </form>
     </div>
 </body>

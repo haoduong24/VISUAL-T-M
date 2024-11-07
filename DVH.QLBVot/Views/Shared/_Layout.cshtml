@@ -3,16 +3,11 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Mua sắm ngay, nhận quà liền tay!</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Thêm Font Awesome -->
     <style>
-        body {
-            background-image: url('/'); /* Đường dẫn đến ảnh nền */
-            background-size: cover;
-            background-position: center;
-        }
-
         .nav-link {
             position: relative;
             color: #fff;
@@ -39,6 +34,14 @@
             .nav-link:hover::after {
                 width: 100%;
             }
+
+        .navbar-nav {
+            margin-left: auto; /* Đẩy các mục nav sang bên phải */
+        }
+
+        .icon {
+            font-size: 24px; /* Kích thước biểu tượng */
+        }
     </style>
 </head>
 <body>
@@ -52,18 +55,42 @@
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
                     <li>@Html.ActionLink("Chi tiết đơn hàng", "index", "ChiTietDonHangs", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Đơn Hàng", "index", "DonHangs", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("Hoá Đơn", "index", "HoaDons", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Khách Hàng", "index", "KhachHangs", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("Khuyến Mãi", "index", "KhuyenMais", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Nhà Cung Cấp", "index", "NhaCungCaps", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("Nhân Viên", "index", "NhanViens", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("Vợt", "index", "Vots", new { area = "" }, new { @class = "nav-link" })</li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index", "DonHangs")" title="Đơn Hàng">
+                            <i class="fas fa-box icon"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index", "KhachHangs")" title="Khách Hàng">
+                            <i class="fas fa-users icon"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index", "NhaCungCaps")" title="Nhà Cung Cấp">
+                            <i class="fas fa-truck icon"></i>
+                        </a>
+                    </li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item">
+                            <span class="nav-link">Hello, @User.Identity.Name!</span>
+                        </li>
+                        <li class="nav-item">
+                            <form method="post" asp-area="Identity" asp-page="/Account/Logout" id="logoutForm" class="form-inline">
+                                <button type="submit" class="btn btn-link nav-link">Logout</button>
+                            </form>
+                        </li>
+                    }
                 </ul>
             </div>
         </div>
     </nav>
-
     <div class="container body-content">
         @RenderBody()
         <hr />
